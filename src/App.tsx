@@ -21,7 +21,12 @@ function App() {
       .catch(console.error);
   };
 
-  useEffect(() => updateData, []);
+  useEffect(() => {
+    updateData();
+    // Optionally, you can set an interval to refresh data periodically
+    const interval = setInterval(updateData, 60000); // Refresh every minute
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="App">
