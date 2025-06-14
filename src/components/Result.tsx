@@ -1,9 +1,7 @@
 import { wowClasses } from "../classeWoW";
+import type { Player } from "../types";
 
-type Row = {
-  [key: string]: string;
-};
-export default function Result({ data }: { data: Row[] }) {
+export default function Result({ data }: { data: Player[] }) {
   return (
     <div id="Result">
       <h3>Roster MoP de la -Corp-</h3>

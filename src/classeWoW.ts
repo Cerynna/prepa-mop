@@ -1,7 +1,10 @@
+import type { Role, CompositionSlot } from "./types";
+
 export const wowClasses = {
   deathknight: {
     name: "Chevalier de la mort",
     color: "#c41f3b",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/deathknight.png",
     specs: [
       {
         name: "blood",
@@ -23,6 +26,7 @@ export const wowClasses = {
   druid: {
     name: "Druide",
     color: "#ff7d0a",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/druid.png",
     specs: [
       {
         name: "balance",
@@ -49,6 +53,7 @@ export const wowClasses = {
   hunter: {
     name: "Chasseur",
     color: "#abd473",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/hunter.png",
     specs: [
       {
         name: "beastmastery",
@@ -70,6 +75,7 @@ export const wowClasses = {
   mage: {
     name: "Mage",
     color: "#69ccf0",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/mage.png",
     specs: [
       {
         name: "arcane",
@@ -91,6 +97,7 @@ export const wowClasses = {
   monk: {
     name: "Moine",
     color: "#00ff98",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/monk.png",
     specs: [
       {
         name: "brewmaster",
@@ -112,6 +119,7 @@ export const wowClasses = {
   paladin: {
     name: "Paladin",
     color: "#f58cba",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/paladin.png",
     specs: [
       {
         name: "holy",
@@ -133,6 +141,7 @@ export const wowClasses = {
   priest: {
     name: "Prètre",
     color: "#ffffff",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/priest.png",
     specs: [
       {
         name: "discipline",
@@ -154,6 +163,7 @@ export const wowClasses = {
   rogue: {
     name: "Voleur",
     color: "#fff569",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/rogue.png",
     specs: [
       {
         name: "assassination",
@@ -175,6 +185,7 @@ export const wowClasses = {
   shaman: {
     name: "Chaman",
     color: "#0070dd",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/shaman.png",
     specs: [
       {
         name: "elemental",
@@ -196,6 +207,7 @@ export const wowClasses = {
   warlock: {
     name: "Démoniste",
     color: "#9482c9",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/warlock.png",
     specs: [
       {
         name: "affliction",
@@ -217,6 +229,7 @@ export const wowClasses = {
   warrior: {
     name: "Guerrier",
     color: "#c79c6e",
+    icon: "https://raw.githubusercontent.com/orourkek/Wow-Icons/master/images/class/64/warrior.png",
     specs: [
       {
         name: "arms",
@@ -281,3 +294,134 @@ export const wowClassesResume = {
     "warlock_destruction",
   ],
 };
+
+export const perfectComposition = {
+  tank: [
+    {
+      class: "deathknight",
+      spec: "blood",
+      mandatory: true,
+    },
+    {
+      class: "monk",
+      spec: "brewmaster",
+      mandatory: true,
+    },
+  ],
+  heal: [
+    {
+      class: "priest",
+      spec: "discipline",
+      mandatory: true,
+    },
+    {
+      class: "priest",
+      spec: "discipline",
+      mandatory: true,
+    },
+    {
+      class: "shaman",
+      spec: "restoration",
+      mandatory: true,
+    },
+    {
+      class: "shaman",
+      spec: "restoration",
+      mandatory: true,
+    },
+  ],
+  melee: [
+    {
+      class: "warrior",
+      spec: "arms",
+      mandatory: true,
+    },
+    {
+      class: "warrior",
+      spec: "arms",
+      mandatory: true,
+    },
+    {
+      class: "warrior",
+      spec: "arms",
+      mandatory: true,
+    },
+    {
+      class: "deathknight",
+      spec: "unholy",
+      mandatory: true,
+    },
+    {
+      class: "deathknight",
+      spec: "unholy",
+      mandatory: true,
+    },
+    {
+      class: "deathknight",
+      spec: "unholy",
+    },
+    {
+      class: "rogue",
+      spec: "assassination",
+      mandatory: true,
+    },
+    {
+      class: "shaman",
+      spec: "enhancement",
+    },
+  ],
+  ranged: [
+    {
+      class: "hunter",
+      spec: "beastmastery",
+      mandatory: true,
+    },
+    {
+      class: "hunter",
+      spec: "beastmastery",
+      mandatory: true,
+    },
+    {
+      class: "hunter",
+      spec: "survival",
+      mandatory: true,
+    },
+    {
+      class: "hunter",
+      spec: "survival",
+    },
+    {
+      class: "mage",
+      spec: "frost",
+      mandatory: true,
+    },
+    {
+      class: "mage",
+      spec: "frost",
+      mandatory: true,
+    },
+    {
+      class: "shaman",
+      spec: "elemental",
+      mandatory: true,
+    },
+    {
+      class: "shaman",
+      spec: "elemental",
+    },
+    {
+      class: "warlock",
+      spec: "destruction",
+      mandatory: true,
+    },
+    {
+      class: "priest",
+      spec: "shadow",
+      mandatory: true,
+    },
+    {
+      class: "druid",
+      spec: "balance",
+    },
+  ],
+} as Record<Role, CompositionSlot[]>;

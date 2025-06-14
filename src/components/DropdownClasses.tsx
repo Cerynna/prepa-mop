@@ -35,7 +35,7 @@ export default function DropdownClasses({
                   <li
                     key={specIndex}
                     onClick={() => {
-                      onChange(`${key}-${spec.name}`);
+                      onChange(`${key}-${spec.name}-${spec.role}`);
                       setOpen(false);
                     }}
                   >

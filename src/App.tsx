@@ -4,34 +4,33 @@ import "./App.scss";
 import { useEffect, useState } from "react";
 import { fetchSheetData } from "./services/sheet";
 import Footer from "./components/Footer";
-
-type Row = {
-  [key: string]: string;
-};
+import type { Player } from "./types";
+import PerfectRoster from "./components/PerfectRoster";
 
 function App() {
-  const [data, setData] = useState<Row[]>([]);
+  const [data, setData] = useState<Player[]>([]);
 
   const updateData = () => {
     fetchSheetData()
-      .then((data) => {
-        console.log("Données récupérées :", data);
-        setData(data);
+      .then((pikachu) => {
+        setData(pikachu);
       })
       .catch(console.error);
   };
 
   useEffect(() => {
     updateData();
-    // Optionally, you can set an interval to refresh data periodically
-    const interval = setInterval(updateData, 60000); // Refresh every minute
+    const interval = setInterval(updateData, 60000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="App">
       <FromResult updateData={updateData} />
-      <Result data={data} />
+      <div className="column">
+        <Result data={data} />
+        <PerfectRoster data={data} />
+      </div>
       <Footer />
     </div>
   );

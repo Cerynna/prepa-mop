@@ -42,8 +42,8 @@ export default function FromResult({ updateData }: { updateData: () => void }) {
       />
       <button
         onClick={() => {
-          const [classe1, spec1] = perso1.split("-");
-          const [classe2, spec2] = perso2.split("-");
+          const [classe1, spec1, role1] = perso1.split("-");
+          const [classe2, spec2, role2] = perso2.split("-");
           if (!pseudo || !perso1 || !perso2) {
             alert("Veuillez remplir tous les champs.");
             return;
@@ -60,8 +60,10 @@ export default function FromResult({ updateData }: { updateData: () => void }) {
             pseudo,
             classe1,
             spec1,
+            role1,
             classe2,
             spec2,
+            role2,
           })
             .then(() => {
               console.log("Data submitted successfully");

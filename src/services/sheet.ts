@@ -9,7 +9,7 @@ export const fetchSheetData = async () => {
   try {
     const response = await axios.get(url);
     const [header, ...rows] = response.data.values;
-    console.log("Données récupérées :", rows);
+    // console.log("Données récupérées :", rows);
     return rows.map((row: string[]) =>
       header.reduce((obj: any, key: string, index: number) => {
         obj[key] = row[index] || "";
@@ -26,8 +26,10 @@ export const addRowToSheet = async (data: {
   pseudo: string;
   classe1: string;
   spec1: string;
+  role1: string;
   classe2: string;
   spec2: string;
+  role2: string;
 }) => {
   const params = new URLSearchParams(data);
 
